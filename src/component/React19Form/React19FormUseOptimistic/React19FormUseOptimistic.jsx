@@ -8,6 +8,7 @@ export function React19FormUseOptimistic({ currentName, onUpdateName }) {
     const submitAction = async (formData) => {
         const newName = formData.get('name');
         setOptimisticName(newName);
+
         const updatedName = await simulatingPromise(inError, newName, currentName);
         onUpdateName(updatedName);
     };
@@ -15,13 +16,14 @@ export function React19FormUseOptimistic({ currentName, onUpdateName }) {
     return (
         <>
             <h3>useOptimistic</h3>
-            <button onClick={() => setInError((prev) => !prev)}>Set in error</button>
+            <button onClick={() => setInError((prev) => !prev)}>Set in error : {(inError).toString()}</button>
             <form action={submitAction}>
                 <p>Your name is: {optimisticName}</p>
                 <p>
                     <label>Change Name:</label>
                     <input type="text" name="name" disabled={currentName !== optimisticName} />
                 </p>
+                <button type="submit">Submit</button>
             </form>
         </>
     );

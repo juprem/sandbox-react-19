@@ -9,9 +9,13 @@ function App() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', gap: '1rem' }}>
             <React19FormUseActionState />
+            <div style={{ width: '100%', height: '1px', border: "1px solid black" }} />
             <React19FormUseFormStatus />
+            <div style={{ width: '100%', height: '1px', border: "1px solid black" }} />
             <WrapperUseOptimistic />
+            <div style={{ width: '100%', height: '1px', border: "1px solid black" }} />
             <React19UseSuspense />
+            <div style={{ width: '100%', height: '1px', border: "1px solid black" }} />
             <React19UseContext />
         </div>
     );
